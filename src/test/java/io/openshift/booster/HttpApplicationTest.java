@@ -46,7 +46,7 @@ public class HttpApplicationTest {
         assertThat(resp.succeeded()).isTrue();
         assertThat(resp.result().statusCode()).isEqualTo(200);
         String content = resp.result().bodyAsJsonObject().getString("content");
-        assertThat(content).isEqualTo("Hello, World!");
+        assertThat(content).isEqualTo(HttpApplication.salutation + ", World!");
         async.complete();
       });
   }
@@ -55,12 +55,12 @@ public class HttpApplicationTest {
   public void callGreetingWithParamTest(TestContext context) {
     // Send a request and get a response
     Async async = context.async();
-    client.get(PORT, "localhost", "/api/greeting?name=Charles")
+    client.get(PORT, "localhost", "/api/greeting?name=Westexan")
       .send(resp -> {
         assertThat(resp.succeeded()).isTrue();
         assertThat(resp.result().statusCode()).isEqualTo(200);
         String content = resp.result().bodyAsJsonObject().getString("content");
-        assertThat(content).isEqualTo("Hello, Charles!");
+        assertThat(content).isEqualTo(HttpApplication.salutation + ", Westexan!");
         async.complete();
       });
   }
