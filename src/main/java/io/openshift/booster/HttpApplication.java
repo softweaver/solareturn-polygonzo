@@ -13,7 +13,7 @@ import static io.vertx.core.http.HttpHeaders.CONTENT_TYPE;
 
 public class HttpApplication extends AbstractVerticle {
 
-  private static final String template = "Hello, %s!";
+  private static final String template = "Howdy, %s!";
 
   private boolean online = false;
 
@@ -41,7 +41,7 @@ public class HttpApplication extends AbstractVerticle {
   }
 
   private void stopTheService(RoutingContext rc) {
-    rc.response().end("Stopping HTTP server, Bye bye world !");
+    rc.response().end("Stopping Solareturn HTTP server, Bye bye polygonzo world !");
     online = false;
   }
 
