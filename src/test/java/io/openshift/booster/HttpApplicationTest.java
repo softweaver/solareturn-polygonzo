@@ -46,7 +46,7 @@ public class HttpApplicationTest {
         assertThat(resp.succeeded()).isTrue();
         assertThat(resp.result().statusCode()).isEqualTo(200);
         String content = resp.result().bodyAsJsonObject().getString("content");
-        assertThat(content).isEqualTo(HttpApplication.salutation + ", World!");
+        assertThat(content).isEqualTo(HttpApplication.getSalutation() + ", World!");
         async.complete();
       });
   }
@@ -60,7 +60,7 @@ public class HttpApplicationTest {
         assertThat(resp.succeeded()).isTrue();
         assertThat(resp.result().statusCode()).isEqualTo(200);
         String content = resp.result().bodyAsJsonObject().getString("content");
-        assertThat(content).isEqualTo(HttpApplication.salutation + ", Westexan!");
+        assertThat(content).isEqualTo(HttpApplication.getSalutation() + ", Westexan!");
         async.complete();
       });
   }
