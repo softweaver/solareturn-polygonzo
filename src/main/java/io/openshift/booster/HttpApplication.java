@@ -41,7 +41,7 @@ public class HttpApplication extends AbstractVerticle {
   }
 
   private void stopTheService(RoutingContext rc) {
-    rc.response().end("Stopping Solareturn HTTP server, Bye bye polygonzo world !");
+    rc.response().end("Stopping Solareturn 20180817 HTTP server, Bye bye polygonzo world !");
     online = false;
   }
 
