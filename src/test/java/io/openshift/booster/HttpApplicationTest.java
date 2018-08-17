@@ -21,6 +21,8 @@ public class HttpApplicationTest {
 
   private Vertx vertx;
   private WebClient client;
+  
+  private static final String salutation = "Howdy";
 
   @Before
   public void before(TestContext context) {
@@ -46,7 +48,7 @@ public class HttpApplicationTest {
         assertThat(resp.succeeded()).isTrue();
         assertThat(resp.result().statusCode()).isEqualTo(200);
         String content = resp.result().bodyAsJsonObject().getString("content");
-        assertThat(content).isEqualTo(HttpApplication.getSalutation() + ", World!");
+        assertThat(content).isEqualTo(salutation + ", World!");
         async.complete();
       });
   }
@@ -60,7 +62,7 @@ public class HttpApplicationTest {
         assertThat(resp.succeeded()).isTrue();
         assertThat(resp.result().statusCode()).isEqualTo(200);
         String content = resp.result().bodyAsJsonObject().getString("content");
-        assertThat(content).isEqualTo(HttpApplication.getSalutation() + ", Westexan!");
+        assertThat(content).isEqualTo(salutation + ", Westexan!");
         async.complete();
       });
   }
