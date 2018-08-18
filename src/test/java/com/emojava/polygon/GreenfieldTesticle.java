@@ -1,4 +1,4 @@
-package com.emojava.polygon
+package com.emojava.polygon;
 
 import io.vertx.core.Vertx;
 import io.vertx.ext.unit.Async;
